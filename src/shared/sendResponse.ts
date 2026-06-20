@@ -11,7 +11,7 @@ type TJsonData<T> = {
   success: boolean;
   message: string;
   meta?: TMeta | null | undefined;
-  data: T | null | undefined;
+  data?: T | null | undefined;
 };
 
 const sendResponse = <T>(res: Response, jsonData: TJsonData<T>) => {

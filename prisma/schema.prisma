@@ -19,7 +19,7 @@ model Customer {
   email      String   @unique
   phone      String
   createdAt  DateTime @default(now())
-  bike       Bike?
+  bikes      Bike[]
 
   @@map("customers")
 }
@@ -29,7 +29,7 @@ model Bike {
   brand      BikeBrand
   model      String
   year       Int
-  customerId String    @unique
+  customerId String
 
   customer      Customer       @relation(fields: [customerId], references: [customerId])
   serviceRecord ServiceRecord?
