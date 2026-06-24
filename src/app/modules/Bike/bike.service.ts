@@ -45,7 +45,7 @@ const getAllBikesFromDB = async (
     });
   }
 
-  const whereCondition = { AND: andConditions };
+  const whereCondition: Prisma.BikeWhereInput = { AND: andConditions };
 
   const result = await prisma.bike.findMany({
     where: whereCondition,

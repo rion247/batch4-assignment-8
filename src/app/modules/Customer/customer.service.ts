@@ -45,7 +45,7 @@ const getAllCustomersFromDB = async (
     });
   }
 
-  const whereCondition = { AND: andConditions };
+  const whereCondition: Prisma.CustomerWhereInput = { AND: andConditions };
 
   const result = await prisma.customer.findMany({
     where: whereCondition,

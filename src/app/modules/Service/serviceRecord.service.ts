@@ -162,7 +162,7 @@ const getAllPendingServiceRecordsFromDB = async (
     },
   });
 
-  const whereCondition = { AND: andConditions };
+  const whereCondition: Prisma.ServiceRecordWhereInput = { AND: andConditions };
 
   const result = await prisma.serviceRecord.findMany({
     where: whereCondition,
